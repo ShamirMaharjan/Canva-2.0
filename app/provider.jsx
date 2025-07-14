@@ -1,12 +1,15 @@
 "use client"
 import { useUser } from '@stackframe/stack'
 import { useMutation } from 'convex/react';
-import React, { Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { api } from '@/convex/_generated/api';
+import { UserDetailContext } from '@/context/UserDetailContext';
 
 function Provider({ children }) {
     const user = useUser();
     const createNewUserMutation = useMutation(api.users.CreateNewUser);
+
+    const [userDetail, setUserDetail] = useState(null);
 
     useEffect(() => {
         user && CreateUser();
@@ -23,11 +26,15 @@ function Provider({ children }) {
             ...data
         })
         console.log(result);
+        setUserDetail(result);
     }
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            {children}
-        </Suspense>
+        <div>
+            <UserDetailContext.Provider value={{ userDetail, setUserDetail }}>
+
+                {children}
+            </UserDetailContext.Provider>
+        </div>
     )
 }
 

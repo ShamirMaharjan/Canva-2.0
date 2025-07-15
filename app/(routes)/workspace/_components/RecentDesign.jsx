@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+import CustomCanvaDialog from './CustomCanvaDialog'
 const RecentDesign = () => {
 
     const [designList, setDesignList] = useState([])
@@ -13,7 +14,9 @@ const RecentDesign = () => {
                 <div className='flex flex-col gap-4 items-center mt-5'>
                     <Image src={"/edittool.png"} alt="edit" width={100} height={100} />
                     <h2 className='text-center'> You dont have any design created</h2>
-                    <Button>+Create New</Button>
+                    <CustomCanvaDialog>
+                        <Button>+Create New</Button>
+                    </CustomCanvaDialog>
 
                 </div> :
                 null

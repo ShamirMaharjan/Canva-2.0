@@ -1,8 +1,29 @@
+"use client"
 import { canvasSizeOptions } from '@/services/Options'
+import { useMutation } from 'convex/react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
+import { api } from '@/convex/_generated/api'
+import { UserDetailContext } from '@/context/UserDetailContext'
+import { toast } from 'sonner'
 
 const IntroOptions = () => {
+
+    const createDesignRecord = useMutation(api.designs.CreateNewDesign);
+    const { userDetail } = useContext(UserDetailContext);
+
+    const OnCanvasOptionSelect = async (option) => {
+        toast("Loading...")
+        const result = await createDesignRecord({
+            name: option.name,
+            width: option.width,
+            height: option.height,
+            uid: userDetail?._id
+        });
+
+        console.log(result);
+    }
+
     return (
         <div>
             <div className='relative'>
@@ -13,7 +34,7 @@ const IntroOptions = () => {
             <div className='flex gap-6 justify-center items-center mt-8'>
                 {canvasSizeOptions.map((option, index) => {
                     return (
-                        <div key={index} className='flex flex-col items-center'>
+                        <div key={index} className='flex flex-col items-center' onClick={() => OnCanvasOptionSelect(option)}>
                             <Image src={option.icon} alt={option.name} width={60} height={60}
                                 className='hover:scale-105 transation-all cursor-pointer' />
                             <p className='text-sm pt-2 font-medium'>{option.name}</p>

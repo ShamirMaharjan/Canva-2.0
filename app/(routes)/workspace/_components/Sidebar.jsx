@@ -3,6 +3,7 @@ import { WorkspaceMenu } from '@/services/Options'
 import { CirclePlusIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import CustomCanvaDialog from './CustomCanvaDialog'
 
 function Sidebar() {
 
@@ -10,11 +11,13 @@ function Sidebar() {
     console.log(path)
     return (
         <div className='h-screen shadow-sm bg-purple-50 '>
+            <CustomCanvaDialog>
+                <div className='p-2 flex items-center flex-col hover:cursor-pointer mb-5 mt-3'>
+                    <CirclePlusIcon className='bg-purple-600 text-white rounded-full h-8 w-8' />
+                    <p className="text-purple-600">Create</p>
+                </div>
+            </CustomCanvaDialog>
 
-            <div className='p-2 flex items-center flex-col hover:cursor-pointer mb-5 mt-3'>
-                <CirclePlusIcon className='bg-purple-600 text-white rounded-full h-8 w-8' />
-                <p text-purple-600>Create</p>
-            </div>
             {WorkspaceMenu.map((menu, index) => {
                 return (
                     <div key={index} className={`p-2 px-5  flex items-center flex-col mb-3 group hover:bg-purple-100 rounded-xl cursor-pointer 

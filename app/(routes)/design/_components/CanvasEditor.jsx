@@ -1,11 +1,13 @@
 "use client"
 import { Canvas } from 'fabric';
 import React, { useEffect, useRef, useState } from 'react'
+import { useCanvasHook } from '../[designId]/page';
 
 const CanvasEditor = ({ DesignInfo }) => {
 
     const canvasref = useRef();
     const [canvas, setCanvas] = useState(null);
+    const { canvasEditor, setCanvasEditor } = useCanvasHook();
 
     //used to initialize canvas with default width and heright
     useEffect(() => {
@@ -26,6 +28,7 @@ const CanvasEditor = ({ DesignInfo }) => {
             })
             initCanvas.renderAll();
             setCanvas(initCanvas);
+            setCanvasEditor(initCanvas);
             return () => {
                 initCanvas.dispose();
             }

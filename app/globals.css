@@ -43,6 +43,13 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+.chrome-picker {
+  width: auto !important;
+  box-shadow: none !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

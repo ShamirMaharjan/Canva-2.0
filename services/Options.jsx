@@ -1,5 +1,5 @@
 import { Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Settings, ShapesIcon, Sparkle, Type, WalletCardsIcon } from "lucide-react";
-
+import BackgroundSettings from "./Components/BackgroundSettings";
 export const WorkspaceMenu = [
 
     {
@@ -129,7 +129,7 @@ export const sideBarMenu = [
         name: 'Background',
         desc: 'Change Canvas Background',
         icon: Component,
-        // component: <BackrgoundSetting />
+        component: <BackgroundSettings />
     },
     {
         name: 'Settings',

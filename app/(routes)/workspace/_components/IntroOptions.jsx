@@ -6,11 +6,13 @@ import React, { useContext } from 'react'
 import { api } from '@/convex/_generated/api'
 import { UserDetailContext } from '@/context/UserDetailContext'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation';
 
 const IntroOptions = () => {
 
     const createDesignRecord = useMutation(api.designs.CreateNewDesign);
     const { userDetail } = useContext(UserDetailContext);
+    const router = useRouter();
 
     const OnCanvasOptionSelect = async (option) => {
         toast("Loading...")
@@ -22,6 +24,8 @@ const IntroOptions = () => {
         });
 
         console.log(result);
+
+        router.push("/design/" + result);
     }
 
     return (

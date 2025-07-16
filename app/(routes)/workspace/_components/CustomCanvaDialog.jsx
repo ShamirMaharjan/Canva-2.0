@@ -14,6 +14,7 @@ import { Loader2Icon } from 'lucide-react'
 import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation';
 
 const CustomCanvaDialog = ({ children }) => {
 
@@ -24,6 +25,8 @@ const CustomCanvaDialog = ({ children }) => {
 
     const createDesignRecord = useMutation(api.designs.CreateNewDesign);
     const { userDetail } = useContext(UserDetailContext)
+
+    const router = useRouter();
 
     const onCreate = async () => {
         toast("Loading...")
@@ -37,6 +40,8 @@ const CustomCanvaDialog = ({ children }) => {
 
         console.log(result);
         setLoading(false);
+
+        router.push("/design/" + result);
     }
     return (
         <Dialog>

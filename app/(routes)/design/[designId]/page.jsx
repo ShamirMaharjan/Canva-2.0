@@ -5,6 +5,7 @@ import DesignHeader from '../_components/DesignHeader';
 import { useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import Sidebar from '../_components/Sidebar';
+import CanvasEditor from '../_components/CanvasEditor';
 
 
 const DesignEditor = () => {
@@ -17,8 +18,9 @@ const DesignEditor = () => {
     return (
         <div>
             <DesignHeader DesignInfo={DesignInfo} />
-            <div>
+            <div className='flex'>
                 <Sidebar />
+                <CanvasEditor DesignInfo={DesignInfo} />
             </div>
         </div>
     )

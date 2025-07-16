@@ -38,7 +38,7 @@ const IntroOptions = () => {
             <div className='flex gap-6 justify-center items-center mt-8'>
                 {canvasSizeOptions.map((option, index) => {
                     return (
-                        <div key={index} className='flex flex-col items-center' onClick={() => OnCanvasOptionSelect(option)}>
+                        <div key={index} className={`flex flex-col items-center ${!userDetail ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`} onClick={() => userDetail && OnCanvasOptionSelect(option)}>
                             <Image src={option.icon} alt={option.name} width={60} height={60}
                                 className='hover:scale-105 transation-all cursor-pointer' />
                             <p className='text-sm pt-2 font-medium'>{option.name}</p>

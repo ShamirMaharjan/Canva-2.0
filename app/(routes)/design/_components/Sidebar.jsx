@@ -10,7 +10,7 @@ const Sidebar = () => {
             <div className='p-2 w-[120px] border-r h-screen pt-2'>
                 {sideBarMenu.map((menu, index) => (
                     <div key={index} className={`p-2 mb-3 flex flex-col items-center hover:bg-secondary cursor-pointer 
-                        ${menu.name === selectedOption.name && "bg-secondary"}`}
+                        ${menu.name == selectedOption?.name && "bg-secondary"}`}
                         onClick={() => setSelectedOption(menu)}
                     >
                         <menu.icon />

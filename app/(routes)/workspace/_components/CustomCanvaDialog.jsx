@@ -68,7 +68,7 @@ const CustomCanvaDialog = ({ children }) => {
                             </div>
                             <div className='flex justify-end mt-6 '>
                                 <Button className="w-full"
-                                    disabled={loading || !name || !width || !height}
+                                    disabled={loading || !name || !width || !height || !userDetail}
                                     onClick={onCreate}
                                 >
                                     {loading ? <Loader2Icon className='animate-spin' /> : "Create"}

@@ -14,8 +14,8 @@ const CanvasEditor = ({ DesignInfo }) => {
 
         if (canvasref.current && DesignInfo) {
             const initCanvas = new Canvas(canvasref.current, {
-                width: DesignInfo?.width / 1.5,
-                height: DesignInfo?.height / 1.5,
+                width: DesignInfo?.width / 1.2,
+                height: DesignInfo?.height / 1.2,
                 backgroundColor: '#ffffff'
             });
 

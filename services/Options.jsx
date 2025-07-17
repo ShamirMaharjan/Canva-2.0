@@ -1,7 +1,12 @@
-import { Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Settings, ShapesIcon, Sparkle, Type, WalletCardsIcon } from "lucide-react";
+import { ArrowDown, ArrowUp, Blend, Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, Type, WalletCardsIcon } from "lucide-react";
 import BackgroundSettings from "./Components/BackgroundSettings";
 import ImageSetting from "./Components/ImageSetting";
 import Elements from "./Components/Elements";
+import FillColor from "./Sharable/FillColor";
+import BorderColor from "./Sharable/BorderColor";
+import BorderWidth from "./Sharable/BorderWidth";
+import Opacity from "./Sharable/Opacity";
+import BorderRadius from "./Sharable/BorderRadius";
 export const WorkspaceMenu = [
 
     {
@@ -160,47 +165,47 @@ export const ShapeList = [
 ]
 
 
-// export const shapesSettingsList = [
-//     {
-//         name: 'Fill',
-//         icon: Palette,
-//         component: <FillColor />
-//     },
-//     {
-//         name: 'Stroke Color',
-//         icon: Square,
-//         component: <BorderColor />
-//     },
-//     {
-//         name: 'Stroke Width',
-//         icon: Minus,
-//         component: <BorderWidth />
-//     },
-//     {
-//         name: 'Opacity',
-//         icon: Blend,
-//         component: <Opacity />
-//     },
-//     {
-//         name: 'Rounded Corner',
-//         icon: SquareRoundCorner,
-//         component: <BorderRadius />
-//     },
-//     {
-//         name: 'Bring Front',
-//         icon: ArrowUp,
-//         component: <MoveForward />
-//     },
-//     {
-//         name: 'Move Back',
-//         icon: ArrowDown,
-//         component: <MoveBackword />
-//     },
-//     // {
-//     //     name: 'Delete',
-//     //     icon: Trash
-//     // }
-// ]
+export const shapesSettingsList = [
+    {
+        name: 'Fill',
+        icon: Palette,
+        component: <FillColor />
+    },
+    {
+        name: 'Stroke Color',
+        icon: Square,
+        component: <BorderColor />
+    },
+    {
+        name: 'Stroke Width',
+        icon: Minus,
+        component: <BorderWidth />
+    },
+    {
+        name: 'Opacity',
+        icon: Blend,
+        component: <Opacity />
+    },
+    {
+        name: 'Rounded Corner',
+        icon: SquareRoundCorner,
+        component: <BorderRadius />
+    },
+    {
+        name: 'Bring Front',
+        icon: ArrowUp,
+        // component: <MoveForward />
+    },
+    {
+        name: 'Move Back',
+        icon: ArrowDown,
+        // component: <MoveBackword />
+    },
+    // {
+    //     name: 'Delete',
+    //     icon: Trash
+    // }
+]
 
 // export const AITransformationSettings = [
 //     {

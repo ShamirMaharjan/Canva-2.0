@@ -1,6 +1,7 @@
 import { Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Settings, ShapesIcon, Sparkle, Type, WalletCardsIcon } from "lucide-react";
 import BackgroundSettings from "./Components/BackgroundSettings";
 import ImageSetting from "./Components/ImageSetting";
+import Elements from "./Components/Elements";
 export const WorkspaceMenu = [
 
     {
@@ -106,7 +107,7 @@ export const sideBarMenu = [
         name: 'Elements',
         desc: 'Select Shapes and Stickers',
         icon: ShapesIcon,
-        // component: <Elements />
+        component: <Elements />
     },
     {
         name: 'Images',
@@ -139,24 +140,24 @@ export const sideBarMenu = [
     }
 ]
 
-// export const ShapeList = [
-//     {
-//         name: 'Circle',
-//         icon: '/moon.png'
-//     },
-//     {
-//         name: 'Square',
-//         icon: '/square.png'
-//     },
-//     {
-//         name: 'Trangle',
-//         icon: '/trangle.png'
-//     },
-//     {
-//         name: 'Line',
-//         icon: '/line.png'
-//     }
-// ]
+export const ShapeList = [
+    {
+        name: 'Circle',
+        icon: '/moon.png'
+    },
+    {
+        name: 'Square',
+        icon: '/square.png'
+    },
+    {
+        name: 'Triangle',
+        icon: '/trangle.png'
+    },
+    {
+        name: 'Line',
+        icon: '/line.png'
+    }
+]
 
 
 // export const shapesSettingsList = [

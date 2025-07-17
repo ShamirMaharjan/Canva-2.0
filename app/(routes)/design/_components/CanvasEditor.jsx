@@ -16,7 +16,8 @@ const CanvasEditor = ({ DesignInfo }) => {
             const initCanvas = new Canvas(canvasref.current, {
                 width: DesignInfo?.width / 1.2,
                 height: DesignInfo?.height / 1.2,
-                backgroundColor: '#ffffff'
+                backgroundColor: '#ffffff',
+                preserveObjectStacking: true,
             });
 
             //set high resolution scale factor
@@ -34,6 +35,26 @@ const CanvasEditor = ({ DesignInfo }) => {
             }
         }
     }, [DesignInfo])
+
+    //used to delete selected object from canvas
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key == "Delete" || event.key == "Backspace") {
+                if (canvasEditor) {
+                    const activeObject = canvasEditor.getActiveObject();
+                    if (activeObject) {
+                        canvasEditor.remove(activeObject);
+                        canvasEditor.renderAll();
+                    }
+                }
+            }
+        }
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        }
+    }, [canvasEditor])
     return (
         <div className='bg-secondary w-full h-screen flex flex-col items-center justify-center'>
             <canvas id="canvas" ref={canvasref} />

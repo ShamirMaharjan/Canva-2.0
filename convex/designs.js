@@ -30,3 +30,16 @@ export const GetDesign = query({
         return result;
     }
 })
+
+export const saveDesign = mutation({
+    args: {
+        id: v.id("designs"),
+        jsonDesign: v.any()
+    },
+    handler: async (ctx, args) => {
+        const result = await ctx.db.patch(args.id, {
+            jsonTemplete: args.jsonDesign
+        })
+        return result;
+    }
+})

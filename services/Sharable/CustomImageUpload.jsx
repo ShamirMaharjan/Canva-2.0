@@ -36,11 +36,18 @@ const CustomImageUpload = ({ selectedAi }) => {
     }
 
     const onAddToCanvas = async () => {
-        const canvasImageref = await FabricImage.fromURL(
-            image
-        )
-        canvasEditor.add(canvasImageref);
-        setImage(null)
+        try {
+            if (!image) {
+                console.error("Image URL is null or undefined.");
+                return;
+            }
+            const canvasImageref = await FabricImage.fromURL(image);
+            canvasEditor.add(canvasImageref);
+            setImage(null);
+        } catch (error) {
+            console.error("Error loading image to canvas:", error);
+            console.error("Problematic image URL:", image);
+        }
 
     }
 

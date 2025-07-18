@@ -28,7 +28,14 @@ const CanvasEditor = ({ DesignInfo }) => {
                 height: DesignInfo?.height * scaleFactor,
                 zoom: 1 / scaleFactor
             })
-            initCanvas.renderAll();
+
+
+            if (DesignInfo?.jsonTemplete) {
+                initCanvas.loadFromJSON(DesignInfo?.jsonTemplete, () => {
+                    initCanvas.requestRenderAll();
+                })
+            }
+
             setCanvas(initCanvas);
             setCanvasEditor(initCanvas);
             return () => {

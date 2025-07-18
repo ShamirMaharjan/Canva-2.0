@@ -7,6 +7,8 @@ import BorderColor from "./Sharable/BorderColor";
 import BorderWidth from "./Sharable/BorderWidth";
 import Opacity from "./Sharable/Opacity";
 import BorderRadius from "./Sharable/BorderRadius";
+import AiTransformSetting from "./Components/AiTransformSetting";
+import TextSettings from "./Components/TextSettings";
 export const WorkspaceMenu = [
 
     {
@@ -124,13 +126,13 @@ export const sideBarMenu = [
         name: 'Text',
         desc: 'Add Text and Heading',
         icon: Type,
-        // component: <TextSettings />
+        component: <TextSettings />
     },
     {
         name: 'AI',
         desc: 'More AI Feature to enhance your design',
         icon: Sparkle,
-        // component: <AiTransformSetting />
+        component: <AiTransformSetting />
     },
     {
         name: 'Background',
@@ -207,59 +209,59 @@ export const shapesSettingsList = [
     // }
 ]
 
-// export const AITransformationSettings = [
-//     {
-//         name: 'Background Remove',
-//         command: 'e-bgremove',
-//         image: '/remove-bg.jpg'
-//     },
-//     {
-//         name: 'Change Background',
-//         command: 'e-changebg-prompt-snow',
-//         image: '/change-bg.jpg',
-//         input: true
-//     },
-//     {
-//         name: 'Generative fill',
-//         command: 'bg-genfill,w-1000,h-960,cm-pad_resize',
-//         image: '/generative-fill.png'
-//     },
-//     {
-//         name: 'AI drop shadow',
-//         command: 'e-dropshadow',
-//         image: '/shadow.jpeg'
-//     },
-//     {
-//         name: 'Upscale',
-//         command: 'e-upscale',
-//         image: '/upscale.png'
-//     },
-//     {
-//         name: 'Smart crop',
-//         command: 'fo-auto',
-//         image: '/smartcrop.png'
-//     },
-//     {
-//         name: 'Contrast',
-//         command: 'e-contrast',
-//         image: '/e-contrast.png'
-//     },
-//     {
-//         name: 'Grayscale',
-//         command: 'e-grayscale',
-//         image: '/grayscale.png'
-//     },
-//     {
-//         name: 'Blur',
-//         command: 'bl-10',
-//         image: '/e-blur.png'
-//     },
-//     {
-//         name: 'Flip',
-//         command: 'e-flip',
-//         image: '/e-flip.png'
-//     }
-// ]
+export const AITransformationSettings = [
+    {
+        name: 'Background Remove',
+        command: 'e-bgremove',
+        image: '/remove-bg.jpg'
+    },
+    {
+        name: 'Change Background',
+        command: 'e-changebg-prompt-snow',
+        image: '/change-bg.jpg',
+        input: true
+    },
+    {
+        name: 'Generative fill',
+        command: 'bg-genfill,w-1000,h-960,cm-pad_resize',
+        image: '/generative-fill.png'
+    },
+    {
+        name: 'AI drop shadow',
+        command: 'e-dropshadow',
+        image: '/shadow.jpeg'
+    },
+    {
+        name: 'Upscale',
+        command: 'e-upscale',
+        image: '/upscale.png'
+    },
+    {
+        name: 'Smart crop',
+        command: 'fo-auto',
+        image: '/smartcrop.png'
+    },
+    {
+        name: 'Contrast',
+        command: 'e-contrast',
+        image: '/e-contrast.png'
+    },
+    {
+        name: 'Grayscale',
+        command: 'e-grayscale',
+        image: '/grayscale.png'
+    },
+    {
+        name: 'Blur',
+        command: 'bl-10',
+        image: '/e-blur.png'
+    },
+    {
+        name: 'Flip',
+        command: 'e-flip',
+        image: '/e-flip.png'
+    }
+]
 
 
 // export const TextSettingsList = [

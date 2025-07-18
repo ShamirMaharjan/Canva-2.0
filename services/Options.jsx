@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, Blend, Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, Type, WalletCardsIcon } from "lucide-react";
+import { ArrowDown, ArrowUp, Blend, BookType, Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, Type, WalletCardsIcon } from "lucide-react";
 import BackgroundSettings from "./Components/BackgroundSettings";
 import ImageSetting from "./Components/ImageSetting";
 import Elements from "./Components/Elements";
@@ -9,6 +9,7 @@ import Opacity from "./Sharable/Opacity";
 import BorderRadius from "./Sharable/BorderRadius";
 import AiTransformSetting from "./Components/AiTransformSetting";
 import TextSettings from "./Components/TextSettings";
+import FontFamily from "./Sharable/FontFamily";
 export const WorkspaceMenu = [
 
     {
@@ -264,64 +265,64 @@ export const AITransformationSettings = [
 ]
 
 
-// export const TextSettingsList = [
-//     {
-//         name: 'Fill',
-//         icon: Palette,
-//         component: <FillColor />
-//     },
-//     {
-//         name: 'Stroke Color',
-//         icon: Square,
-//         component: <BorderColor />
-//     },
-//     {
-//         name: 'Stroke Width',
-//         icon: Minus,
-//         component: <BorderWidth />
-//     },
-//     {
-//         name: 'Opacity',
-//         icon: Blend,
-//         component: <Opacity />
-//     },
-//     {
-//         name: 'Font',
-//         icon: BookType,
-//         component: <FontFamily />
-//     },
-//     {
-//         name: 'Bring Front',
-//         icon: ArrowUp,
-//         component: <MoveForward />
-//     },
-//     {
-//         name: 'Move Back',
-//         icon: ArrowDown,
-//         component: <MoveBackword />
-//     },
-// ]
+export const TextSettingsList = [
+    {
+        name: 'Fill',
+        icon: Palette,
+        component: <FillColor />
+    },
+    {
+        name: 'Stroke Color',
+        icon: Square,
+        component: <BorderColor />
+    },
+    {
+        name: 'Stroke Width',
+        icon: Minus,
+        component: <BorderWidth />
+    },
+    {
+        name: 'Opacity',
+        icon: Blend,
+        component: <Opacity />
+    },
+    {
+        name: 'Font',
+        icon: BookType,
+        component: <FontFamily />
+    },
+    {
+        name: 'Bring Front',
+        icon: ArrowUp,
+        // component: <MoveForward />
+    },
+    {
+        name: 'Move Back',
+        icon: ArrowDown,
+        // component: <MoveBackword />
+    },
+]
 
-// export const FontFamilyList = [
-//     "Arial",
-//     "Arial Black",
-//     "Verdana",
-//     "Helvetica",
-//     "Tahoma",
-//     "Trebuchet MS",
-//     "Times New Roman",
-//     "Georgia",
-//     "Garamond",
-//     "Courier New",
-//     "Brush Script MT",
-//     "Palatino",
-//     "Bookman",
-//     "Comic Sans MS",
-//     "Impact",
-//     "Lucida Sans Unicode",
-//     "Geneva",
-//     "Lucida Console",
-// ]
+export const FontFamilyList = [
+    "Arial",
+    "Arial Black",
+    "Verdana",
+    "Helvetica",
+    "Tahoma",
+    "Trebuchet MS",
+    "Times New Roman",
+    "Georgia",
+    "Garamond",
+    "Courier New",
+    "Brush Script MT",
+    "Palatino",
+    "Bookman",
+    "Comic Sans MS",
+    "Impact",
+    "Lucida Sans Unicode",
+    "Geneva",
+    "Lucida Console",
+]
 
 
 export const StickerList = [

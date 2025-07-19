@@ -9,6 +9,7 @@ import { useMutation } from 'convex/react'
 import { useParams } from 'next/navigation'
 import { toast } from 'sonner'
 import { api } from '@/convex/_generated/api'
+import ImageKit from 'imagekit'
 
 const DesignHeader = ({ DesignInfo }) => {
 
@@ -16,14 +17,43 @@ const DesignHeader = ({ DesignInfo }) => {
     const SaveDesign = useMutation(api.designs.saveDesign);
     const { designId } = useParams();
 
+    var imagekit = new ImageKit({
+        publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KIT,
+        privateKey: process.env.NEXT_PUBLIC_IMAGEKIT_PRIVATE_KIT,
+        urlEndpoint: process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT
+    });
+
     //used to save design in json format in db
     const onSave = async () => {
         if (canvasEditor) {
+            const base64Image = canvasEditor.toDataURL({
+                format: 'png',
+                quality: 0.5
+            })
+
+            //get list of files
+            const existingFiles = await imagekit.listFiles({
+                searchQuery: `name="${designId}.png"`
+            })
+
+            //delete old file of exists
+            if (existingFiles) {
+                await imagekit.deleteFile(existingFiles[0].fileId);
+            }
+            const imageRef = await imagekit.upload({
+                file: base64Image,
+                fileName: designId + ".png",
+                isPublished: true,
+                useUniqueFileName: false,
+            })
+            console.log(imageRef.url);
+
             const jsonDesign = canvasEditor.toJSON();
-            // console.log(jsonDesign);
+
             const result = await SaveDesign({
                 id: designId,
                 jsonDesign: jsonDesign,
+                imagePreview: imageRef.url, //imagekit url
             })
 
             console.log(result);

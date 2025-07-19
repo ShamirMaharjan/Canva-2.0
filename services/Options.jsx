@@ -10,6 +10,7 @@ import BorderRadius from "./Sharable/BorderRadius";
 import AiTransformSetting from "./Components/AiTransformSetting";
 import TextSettings from "./Components/TextSettings";
 import FontFamily from "./Sharable/FontFamily";
+import TemplatesList from "./Components/TemplatesList";
 export const WorkspaceMenu = [
 
     {
@@ -109,7 +110,7 @@ export const sideBarMenu = [
         name: 'Templates',
         desc: 'Select Prebuild Template',
         icon: LayoutTemplate,
-        // component: <TemplatesList />
+        component: <TemplatesList />
     },
     {
         name: 'Elements',

@@ -23,5 +23,8 @@ export default defineSchema({
         imagePreview: v.string(),
         jsonData: v.any(),
         active: v.boolean(),
+        width: v.optional(v.number()),
+        height: v.optional(v.number()),
+
     })
 })

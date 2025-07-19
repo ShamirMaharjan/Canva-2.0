@@ -1,13 +1,14 @@
 "use client"
 import { WorkspaceMenu } from '@/services/Options'
 import { CirclePlusIcon } from 'lucide-react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import CustomCanvaDialog from './CustomCanvaDialog'
 
 function Sidebar() {
 
     const path = usePathname();
+    const router = useRouter();
     console.log(path)
     return (
         <div className='h-screen shadow-sm bg-purple-50 '>
@@ -21,7 +22,7 @@ function Sidebar() {
             {WorkspaceMenu.map((menu, index) => {
                 return (
                     <div key={index} className={`p-2 px-5  flex items-center flex-col mb-3 group hover:bg-purple-100 rounded-xl cursor-pointer 
-                    ${menu.path === path && 'bg-purple-100'}`}>
+                    ${menu.path === path && 'bg-purple-100'}`} onClick={() => router.push(menu.path)}>
                         <menu.icon className={`w-[20px] h-[20px] group-hover:text-purple-800 ${menu.path === path && 'bg-purple-100'}`} />
                         <p className={`group-hover:text-purple-800 ${menu.path === path && 'bg-purple-100'}`}>{menu.name}</p>
                     </div>

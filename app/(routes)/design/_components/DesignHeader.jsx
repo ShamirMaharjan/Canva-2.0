@@ -37,7 +37,7 @@ const DesignHeader = ({ DesignInfo }) => {
             })
 
             //delete old file of exists
-            if (existingFiles) {
+            if (existingFiles && existingFiles.length > 0) {
                 await imagekit.deleteFile(existingFiles[0].fileId);
             }
             const imageRef = await imagekit.upload({

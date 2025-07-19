@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { UserButton } from '@stackframe/stack'
-import { Save } from 'lucide-react'
+import { Download, Save } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { useCanvasHook } from '../[designId]/page'
@@ -31,6 +31,22 @@ const DesignHeader = ({ DesignInfo }) => {
         }
     }
 
+    const onExport = () => {
+        const dataUrl = canvasEditor.toDataURL({
+            format: 'png',
+            quality: 1
+        })
+
+        const link = document?.createElement("a");
+        link.href = dataUrl;
+        link.download = "CanvaDesign.png";
+        link.click();
+
+        toast.success("Design Exported");
+        link.remove();
+
+    }
+
     return (
         <div className='p-3 flex justify-between bg-gradient-to-r from-sky-500 via-blue-400 to-purple-600'>
             <Image src={"/logo-white.png"} alt="logo" width={100} height={50} />
@@ -38,6 +54,7 @@ const DesignHeader = ({ DesignInfo }) => {
                 value={DesignInfo?.name || ''} readOnly />
             <div className='flex gap-5'>
                 <Button onClick={onSave} ><Save />Save</Button>
+                <Button onClick={() => onExport()}><Download />Export</Button>
                 <UserButton />
             </div>
         </div>

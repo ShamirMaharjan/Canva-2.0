@@ -41,7 +41,12 @@ const CustomImageUpload = ({ selectedAi }) => {
                 console.error("Image URL is null or undefined.");
                 return;
             }
-            const canvasImageref = await FabricImage.fromURL(image);
+            const canvasImageref = await FabricImage.fromURL(
+                image,
+                {
+                    crossOrigin: "anonymous",
+                }
+            );
             canvasEditor.add(canvasImageref);
             setImage(null);
         } catch (error) {
